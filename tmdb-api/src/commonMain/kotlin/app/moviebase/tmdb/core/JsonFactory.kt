@@ -6,15 +6,18 @@ import app.moviebase.tmdb.model.TmdbPerson
 import app.moviebase.tmdb.model.TmdbPersonCredit
 import app.moviebase.tmdb.model.TmdbSearchableListItem
 import app.moviebase.tmdb.model.TmdbShow
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 
 object JsonFactory {
 
+    @OptIn(ExperimentalSerializationApi::class)
     fun buildJson(): Json = Json {
         encodeDefaults = false
         ignoreUnknownKeys = true
         isLenient = true
+        explicitNulls = false
         allowSpecialFloatingPointValues = true
         prettyPrint = false
 

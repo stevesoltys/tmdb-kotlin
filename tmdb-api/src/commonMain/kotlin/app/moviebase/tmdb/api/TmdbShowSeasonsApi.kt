@@ -24,6 +24,11 @@ class TmdbShowSeasonsApi(private val client: HttpClient) {
         parameterIncludeImageLanguage(includeImageLanguages)
     }.body()
 
+    suspend fun getCredits(showId: Int, seasonNumber: Int, language: String? = null): TmdbCredits = client.get {
+        endPointSeason(showId, seasonNumber, "credits")
+        parameterLanguage(language)
+    }.body()
+
     suspend fun getVideos(showId: Int, seasonNumber: Int, language: String? = null): TmdbResult<TmdbVideo> = client.get {
         endPointSeason(showId, seasonNumber, "videos")
         parameterLanguage(language)

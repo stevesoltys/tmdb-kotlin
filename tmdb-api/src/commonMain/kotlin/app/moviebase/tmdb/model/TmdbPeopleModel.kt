@@ -39,8 +39,8 @@ enum class TmdbGender(val value: Int) {
 
 @Serializable
 data class TmdbCredits(
-    @SerialName("cast") val cast: List<TmdbCast>,
-    @SerialName("crew") val crew: List<TmdbCrew>,
+    @SerialName("cast") val cast: List<TmdbCast> = emptyList(),
+    @SerialName("crew") val crew: List<TmdbCrew> = emptyList(),
 ) {
 
     /**

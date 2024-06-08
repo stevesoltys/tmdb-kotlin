@@ -99,6 +99,7 @@ data class TmdbShowPageResult(
 data class TmdbShowDetail(
     @SerialName("id") override val id: Int,
     val name: String,
+    @SerialName("adult") val adult: Boolean = false,
     @SerialName("poster_path") override val posterPath: String?,
     @SerialName("backdrop_path") override val backdropPath: String?,
     val popularity: Float,

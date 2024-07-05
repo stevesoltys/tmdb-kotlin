@@ -19,3 +19,10 @@ data class TmdbImagesConfiguration(
     @SerialName("profile_sizes") val profileSizes: List<String> = emptyList(),
     @SerialName("still_sizes") val stillSizes: List<String> = emptyList()
 )
+
+@Serializable
+data class TmdbConfigurationCountry(
+    @SerialName("iso_3166_1") val iso3166: String,
+    @SerialName("english_name") val englishName: String,
+    @SerialName("native_name") val nativeName: String,
+)

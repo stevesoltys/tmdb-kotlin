@@ -58,7 +58,7 @@ object TmdbStatusCode {
 
 @Serializable
 data class TmdbResult<T>(
-    val results: List<T>
+    val results: List<T> = emptyList()
 )
 
 interface TmdbPageResult<T> {

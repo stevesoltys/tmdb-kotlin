@@ -58,7 +58,7 @@ data class TmdbProviders(
 @Serializable
 data class TmdbProvider(
     @SerialName("display_priority") val displayPriority: Int?,
-    @SerialName("logo_path") val logoPath: String,
+    @SerialName("logo_path") val logoPath: String?,
     @SerialName("provider_id") val providerId: Int,
     @SerialName("provider_name") val providerName: String
 )

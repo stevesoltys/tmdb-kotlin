@@ -53,6 +53,7 @@ data class TmdbProviders(
     val link: String,
     val flatrate: List<TmdbProvider> = emptyList(),
     val free: List<TmdbProvider> = emptyList(),
+    val ads: List<TmdbProvider> = emptyList(),
     val buy: List<TmdbProvider> = emptyList()
 )
 

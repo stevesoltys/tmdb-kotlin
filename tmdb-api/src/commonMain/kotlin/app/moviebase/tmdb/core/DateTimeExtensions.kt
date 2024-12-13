@@ -25,8 +25,7 @@ internal fun String.tryLocalDate(): LocalDate? = try {
 }
 
 internal fun String.tryLocalDateTime(): LocalDateTime? = try {
-    toInstant()
-    if (isBlank()) null else toLocalDateTime()
+    if (isBlank()) null else LocalDateTime.parse(this)
 } catch (t: Throwable) {
     null
 }

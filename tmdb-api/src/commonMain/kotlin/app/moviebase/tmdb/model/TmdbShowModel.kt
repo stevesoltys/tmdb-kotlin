@@ -70,19 +70,19 @@ enum class TmdbShowType(val value: String) {
 @SerialName("tv")
 data class TmdbShow(
     @SerialName("poster_path") override val posterPath: String?,
-    @SerialName("popularity") override val popularity: Float,
+    @SerialName("popularity") override val popularity: Float = 0f,
     @SerialName("id") override val id: Int,
     @SerialName("adult") val adult: Boolean = false,
     @SerialName("backdrop_path") override val backdropPath: String?,
-    @SerialName("vote_average") override val voteAverage: Float,
+    @SerialName("vote_average") override val voteAverage: Float = 0f,
     @SerialName("overview") override val overview: String,
     @SerialName("first_air_date")
   @Serializable(LocalDateSerializer::class)
   val firstAirDate: LocalDate? = null,
-    @SerialName("origin_country") val originCountry: List<String>,
-    @SerialName("genre_ids") override val genresIds: List<Int>,
+    @SerialName("origin_country") val originCountry: List<String> = emptyList(),
+    @SerialName("genre_ids") override val genresIds: List<Int> = emptyList(),
     @SerialName("original_language") override val originalLanguage: String,
-    @SerialName("vote_count") override val voteCount: Int,
+    @SerialName("vote_count") override val voteCount: Int = 0,
     @SerialName("name") val name: String,
     @SerialName("original_name") val originalName: String,
 ) : TmdbMediaListItem, TmdbSearchableListItem

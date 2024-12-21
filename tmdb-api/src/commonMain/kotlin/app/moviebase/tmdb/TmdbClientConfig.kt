@@ -12,19 +12,19 @@ class TmdbClientConfig {
     internal var tmdbAuthCredentials: TmdbAuthCredentials? = null
 
     var expectSuccess: Boolean = true
-    var useCache: Boolean = false
-    var useTimeout: Boolean = false
-    var maxRetriesOnException: Int? = null
+    var useCache: Boolean = true
+    var useTimeout: Boolean = true
+    var maxRequestRetries: Int? = 5
 
     internal var httpClientConfigBlock: (HttpClientConfig<*>.() -> Unit)? = null
     internal var httpClientBuilder: (() -> HttpClient)? = null
-    internal var httpClientLoggingBlock: (Logging.Config.() -> Unit)? = null
+    internal var httpClientLoggingBlock: (LoggingConfig.() -> Unit)? = null
 
     fun userAuthentication(block: TmdbAuthCredentials.() -> Unit) {
         tmdbAuthCredentials = TmdbAuthCredentials().apply(block)
     }
 
-    fun logging(block: Logging.Config.() -> Unit) {
+    fun logging(block: LoggingConfig.() -> Unit) {
         httpClientLoggingBlock = block
     }
 

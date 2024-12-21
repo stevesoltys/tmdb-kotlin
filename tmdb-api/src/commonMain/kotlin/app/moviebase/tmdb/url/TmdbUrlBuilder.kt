@@ -28,6 +28,11 @@ object TmdbUrlBuilder {
     }
 
     /**
+     * https://www.themoviedb.org/list/82963
+     */
+    fun buildList(listId: Int): String = "${TmdbWebConfig.BASE_WEBSITE_URL}/list/$listId"
+
+    /**
      * Build the video URL depending on the site the video is from
      */
     fun buildVideo(tmdbVideo: TmdbVideo): String? = when (tmdbVideo.site) {
@@ -35,4 +40,31 @@ object TmdbUrlBuilder {
         TmdbVideoSite.VIMEO -> "https://vimeo.com/${tmdbVideo.key}"
         else -> null
     }
+
+    /**
+     * Build the media page URL depending on the media type.
+     *
+     * Example:
+     * https://www.themoviedb.org/movie/9257
+     * https://www.themoviedb.org/tv/7179/season/8/episode/1
+     */
+    fun buildMedia(
+        mediaType: TmdbMediaType,
+        parentId: Int,
+        seasonNumber: Int? = null,
+        episodeNumber: Int? = null,
+    ): String {
+        return when (mediaType) {
+            TmdbMediaType.MOVIE -> "${TmdbWebConfig.BASE_WEBSITE_URL}/movie/$parentId"
+            TmdbMediaType.SHOW -> "${TmdbWebConfig.BASE_WEBSITE_URL}/tv/$parentId"
+            TmdbMediaType.SEASON -> "${TmdbWebConfig.BASE_WEBSITE_URL}/tv/$parentId/season/$seasonNumber"
+            TmdbMediaType.EPISODE -> "${TmdbWebConfig.BASE_WEBSITE_URL}/tv/$parentId/season/$seasonNumber/episode/$episodeNumber"
+        }
+    }
+
+    /**
+     * Build person page URL.
+     * https://www.themoviedb.org/person/1456295
+     */
+    fun buildPerson(personId: Int): String = "${TmdbWebConfig.BASE_WEBSITE_URL}/person/$personId"
 }

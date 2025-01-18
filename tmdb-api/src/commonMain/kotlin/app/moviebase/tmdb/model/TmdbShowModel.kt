@@ -199,6 +199,7 @@ data class TmdbEpisode(
     @SerialName("still_path") val stillPath: String? = null,
     @SerialName("crew") val crew: List<TmdbCrew>? = null,
     @SerialName("guest_stars") val guestStars: List<TmdbCast>? = null,
+    @SerialName("runtime") val runtime: Int? = null,
 ) : TmdbAnyItem, TmdbBackdropItem {
 
     override val backdropPath: String? get() = stillPath

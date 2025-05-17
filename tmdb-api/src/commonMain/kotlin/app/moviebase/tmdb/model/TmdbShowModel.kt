@@ -138,6 +138,7 @@ data class TmdbShowDetail(
     @SerialName("content_ratings") val contentRatings: TmdbResult<TmdbContentRating>? = null,
     @SerialName("images") val images: TmdbImages? = null,
     @SerialName("created_by") val createdBy: List<TmdbShowCreatedBy>? = null,
+    @SerialName("keywords") val keywords: TmdbResult<TmdbKeyword>? = null,
 ) : TmdbAnyItem, TmdbBackdropItem, TmdbPosterItem, TmdbRatingItem
 
 fun TmdbResult<TmdbContentRating>.getContentRating(country: String): String? =

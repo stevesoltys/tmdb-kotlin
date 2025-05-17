@@ -28,7 +28,8 @@ enum class AppendResponse(val value: String) {
     CONTENT_RATING("content_ratings"),
     MOVIE_CREDITS("movie_credits"),
     TV_CREDITS("tv_credits"),
-    WATCH_PROVIDERS("watch/providers");
+    WATCH_PROVIDERS("watch/providers"),
+    KEYWORDS("keywords");
 
     companion object {
         fun build(appendResponses: Iterable<AppendResponse>) = appendResponses.joinToString(",") { it.value }

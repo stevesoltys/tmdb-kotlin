@@ -123,7 +123,7 @@ data class TmdbMovieDetail(
     @SerialName("credits") val credits: TmdbCredits? = null,
     @SerialName("videos") val videos: TmdbResult<TmdbVideo>? = null,
     @SerialName("images") val images: TmdbImages? = null,
-    @SerialName("keywords") val keywords: TmdbResult<TmdbKeyword>? = null,
+    @SerialName("keywords") val keywords: Map<String, List<TmdbKeyword>>? = null,
 ) : TmdbRatingItem {
 
     val posterImage get(): TmdbImage? = TmdbImage.poster(posterPath)

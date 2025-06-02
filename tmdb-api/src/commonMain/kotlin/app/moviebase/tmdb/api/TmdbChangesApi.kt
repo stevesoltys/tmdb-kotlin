@@ -3,6 +3,7 @@ package app.moviebase.tmdb.api
 import app.moviebase.tmdb.core.endPointV3
 import app.moviebase.tmdb.core.parameters
 import app.moviebase.tmdb.model.TmdbChange
+import app.moviebase.tmdb.model.TmdbChangePageResult
 import app.moviebase.tmdb.model.TmdbPageResult
 import app.moviebase.tmdb.model.TmdbResult
 import io.ktor.client.*
@@ -15,7 +16,7 @@ class TmdbChangesApi internal constructor(private val client: HttpClient) {
         page: Int,
         startDate: String?,
         endDate: String?,
-    ): TmdbPageResult<TmdbChange> = client.get {
+    ): TmdbChangePageResult = client.get {
         endPointV3("movie/changes")
         parameters(
             mapOf(
@@ -30,7 +31,7 @@ class TmdbChangesApi internal constructor(private val client: HttpClient) {
         page: Int,
         startDate: String?,
         endDate: String?,
-    ): TmdbPageResult<TmdbChange> = client.get {
+    ): TmdbChangePageResult = client.get {
         endPointV3("tv/changes")
         parameters(
             mapOf(

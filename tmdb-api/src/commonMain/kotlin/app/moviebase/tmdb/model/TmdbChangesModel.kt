@@ -14,5 +14,5 @@ data class TmdbChangePageResult(
 @Serializable
 data class TmdbChange(
     @SerialName("id") val id: Int,
-    @SerialName("adult") val adult: Boolean,
+    @SerialName("adult") val adult: Boolean? = null,
 )

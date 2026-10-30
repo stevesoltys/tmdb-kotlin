@@ -250,8 +250,8 @@ typealias TmdbPersonCombinedCredits = TmdbPersonCredits<TmdbPersonCredit>
 
 @Serializable
 data class TmdbPersonCredits<T : TmdbPersonCredit>(
-    @SerialName("cast") val cast: List<T>,
-    @SerialName("crew") val crew: List<T>,
+    @SerialName("cast") val cast: List<T> = emptyList(),
+    @SerialName("crew") val crew: List<T> = emptyList(),
 )
 
 @Polymorphic
@@ -275,22 +275,22 @@ sealed interface TmdbPersonCredit : TmdbAnyItem, TmdbBackdropItem, TmdbPosterIte
     @Serializable
     @SerialName("movie")
     data class Movie(
-        @SerialName("poster_path") override val posterPath: String?,
+        @SerialName("poster_path") override val posterPath: String? = null,
         @SerialName("adult") override val adult: Boolean = false,
-        @SerialName("overview") override val overview: String,
+        @SerialName("overview") override val overview: String = "",
         @SerialName("release_date")
         @Serializable(LocalDateSerializer::class)
         val releaseDate: LocalDate? = null,
-        @SerialName("genre_ids") override val genreIds: List<Int>,
+        @SerialName("genre_ids") override val genreIds: List<Int> = emptyList(),
         @SerialName("id") override val id: Int,
         @SerialName("original_title") val originalTitle: String? = null,
-        @SerialName("original_language") override val originalLanguage: String,
+        @SerialName("original_language") override val originalLanguage: String = "",
         @SerialName("title") val title: String? = null,
-        @SerialName("backdrop_path") override val backdropPath: String?,
-        @SerialName("popularity") override val popularity: Float,
+        @SerialName("backdrop_path") override val backdropPath: String? = null,
+        @SerialName("popularity") override val popularity: Float = 0f,
         @SerialName("video") val video: Boolean = false,
-        @SerialName("vote_average") override val voteAverage: Float,
-        @SerialName("vote_count") override val voteCount: Int,
+        @SerialName("vote_average") override val voteAverage: Float = 0f,
+        @SerialName("vote_count") override val voteCount: Int = 0,
         @SerialName("character") override val character: String? = null,
         @SerialName("credit_id") override val creditId: String? = null,
         @SerialName("order") override val order: Int? = null,
@@ -306,15 +306,15 @@ sealed interface TmdbPersonCredit : TmdbAnyItem, TmdbBackdropItem, TmdbPosterIte
         @SerialName("id") override val id: Int,
         @SerialName("adult") override val adult: Boolean = false,
         @SerialName("backdrop_path") override val backdropPath: String? = null,
-        @SerialName("vote_average") override val voteAverage: Float,
-        @SerialName("overview") override val overview: String,
+        @SerialName("vote_average") override val voteAverage: Float = 0f,
+        @SerialName("overview") override val overview: String = "",
         @SerialName("first_air_date")
         @Serializable(LocalDateSerializer::class)
         val firstAirDate: LocalDate? = null,
         @SerialName("origin_country") val originCountry: List<String> = emptyList(),
         @SerialName("genre_ids") override val genreIds: List<Int> = emptyList(),
-        @SerialName("original_language") override val originalLanguage: String,
-        @SerialName("vote_count") override val voteCount: Int,
+        @SerialName("original_language") override val originalLanguage: String = "",
+        @SerialName("vote_count") override val voteCount: Int = 0,
         @SerialName("name") val name: String? = null,
         @SerialName("original_name") val originalName: String? = null,
         @SerialName("character") override val character: String? = null,

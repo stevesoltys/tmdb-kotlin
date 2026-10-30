@@ -1,0 +1,96 @@
+{
+  "adult": false,
+  "also_known_as": [],
+  "biography": "Synthetic fixture person used to decode a movie credit entry without genre ids, popularity, vote average and vote count.",
+  "gender": 1,
+  "id": 2232,
+  "known_for_department": "Acting",
+  "name": "Sparse Credits Person",
+  "popularity": 9.876,
+  "profile_path": "/sparseProfile.jpg",
+  "movie_credits": {
+    "cast": [
+      {
+        "adult": false,
+        "backdrop_path": "/fullBackdropOne.jpg",
+        "character": "Avery Full",
+        "credit_id": "52fe4234c3a36847f800bdb1",
+        "genre_ids": [
+          18,
+          10749
+        ],
+        "id": 101,
+        "original_language": "en",
+        "original_title": "Full Movie One",
+        "order": 0,
+        "overview": "Overview of the first full credit entry.",
+        "popularity": 16.551,
+        "poster_path": "/fullPosterOne.jpg",
+        "release_date": "1998-11-12",
+        "title": "Full Movie One",
+        "video": false,
+        "vote_average": 7.2,
+        "vote_count": 3372
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/sparseBackdrop.jpg",
+        "character": "Sami Sparse",
+        "credit_id": "52fe4234c3a36847f800bdb2",
+        "id": 102,
+        "original_language": "de",
+        "original_title": "Sparse Movie",
+        "order": 3,
+        "overview": "TMDB leaves out genre_ids, popularity, vote_average and vote_count for this entry.",
+        "poster_path": "/sparsePoster.jpg",
+        "release_date": "2021-03-05",
+        "title": "Sparse Movie",
+        "video": false
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/fullBackdropTwo.jpg",
+        "character": "Rowan Full",
+        "credit_id": "52fe4234c3a36847f800bdb3",
+        "genre_ids": [
+          35
+        ],
+        "id": 103,
+        "original_language": "en",
+        "original_title": "Full Movie Two",
+        "order": 1,
+        "overview": "Overview of the second full credit entry.",
+        "popularity": 9.715,
+        "poster_path": "/fullPosterTwo.jpg",
+        "release_date": "1992-10-09",
+        "title": "Full Movie Two",
+        "video": false,
+        "vote_average": 7.1,
+        "vote_count": 683
+      }
+    ],
+    "crew": [
+      {
+        "adult": false,
+        "backdrop_path": "/crewBackdrop.jpg",
+        "credit_id": "52fe4234c3a36847f800bdb4",
+        "department": "Production",
+        "genre_ids": [
+          16
+        ],
+        "id": 104,
+        "job": "Producer",
+        "original_language": "en",
+        "original_title": "Crew Movie",
+        "overview": "Overview of the crew credit entry.",
+        "popularity": 4.123,
+        "poster_path": "/crewPoster.jpg",
+        "release_date": "2019-05-01",
+        "title": "Crew Movie",
+        "video": false,
+        "vote_average": 6.4,
+        "vote_count": 88
+      }
+    ]
+  }
+}
